@@ -83,6 +83,7 @@ const Signup = () => {
           justifyContent: "center",
           alignItems: "center",
           p: 4,
+          width: {lg: '50%'}
         }}
       >
         <Box sx={{ width: "100%", maxWidth: 700 }} component="form" onSubmit={handleSubmit}>
@@ -165,6 +166,7 @@ const Signup = () => {
           justifyContent: "center",
           alignItems: "center",
           p: 2,
+          width: {lg: '50%'}
         }}
       >
         <Box

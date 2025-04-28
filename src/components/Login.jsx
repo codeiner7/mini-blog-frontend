@@ -78,9 +78,10 @@ const Login = () => {
           justifyContent: "center",
           alignItems: "center",
           p: 4,
+          width: {lg: '50%'}
         }}
       >
-        <Box sx={{ width: "100%", maxWidth: 700 }} component="form" onSubmit={handleSubmit}>
+        <Box sx={{ width: "100%" }} component="form" onSubmit={handleSubmit}>
           <Typography variant="h4" fontWeight="bold" mb={1}>
             Welcome Back 👋
           </Typography>
@@ -148,6 +149,7 @@ const Login = () => {
           justifyContent: "center",
           alignItems: "center",
           p: 2,
+          width: {lg: '50%'}
         }}
       >
         <Box
