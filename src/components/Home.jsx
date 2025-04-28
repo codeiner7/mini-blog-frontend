@@ -18,7 +18,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
-import HomeImg from '../images/home.png';
+import HomeImg from "../images/home.png";
 import { getBaseUrl } from "../utils/common.utils";
 
 const Home = () => {
@@ -63,8 +63,12 @@ const Home = () => {
   }, []);
 
   const filteredBlogs = blogData.filter((blog) => {
-    const titleMatch = blog.title?.toLowerCase().includes(searchQuery.toLowerCase());
-    const categoryMatch = blog.category_name?.name?.toLowerCase().includes(searchQuery.toLowerCase());
+    const titleMatch = blog.title
+      ?.toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    const categoryMatch = blog.category_name?.name
+      ?.toLowerCase()
+      .includes(searchQuery.toLowerCase());
     return titleMatch || categoryMatch;
   });
 
@@ -101,8 +105,8 @@ const Home = () => {
               variant="contained"
               color="secondary"
               onClick={() => {
-                localStorage.removeItem('token');
-                localStorage.removeItem('user');
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
                 window.location.reload();
               }}
               sx={{ ml: 2 }}
@@ -117,13 +121,19 @@ const Home = () => {
             Richird Norton photorealistic rendering as real photos
           </Typography>
           <Typography variant="body1">
-            1 Jan 2023 — Progressively incentivize cooperative systems through technically sound functionalities.
+            1 Jan 2023 — Progressively incentivize cooperative systems through
+            technically sound functionalities.
           </Typography>
         </Box>
       </Box>
 
       <Container sx={{ py: 8 }}>
-        <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          mb={4}
+        >
           <Typography variant="h5" fontWeight="bold">
             Blogs
           </Typography>
@@ -172,7 +182,11 @@ const Home = () => {
                     alt={blog.title}
                   />
                   <CardContent
-                    sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
+                    sx={{
+                      flexGrow: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
                   >
                     <Typography variant="caption" color="textSecondary">
                       {blog.author?.name} •{" "}
@@ -187,16 +201,18 @@ const Home = () => {
                       fontWeight="bold"
                       sx={{ mt: 1, mb: 1 }}
                     >
-                      {blog.title.split(" ").slice(0, 3).join(" ")}
-                      {blog.title.split(" ").length > 3 && "..."}
+                      {blog.title.length > 28
+                        ? `${blog.title.substring(0, 28)}...`
+                        : blog.title}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="textSecondary"
                       sx={{ flexGrow: 1 }}
                     >
-                      {blog.content.split(" ").slice(0, 5).join(" ")}
-                      {blog.content.split(" ").length > 5 && "..."}
+                      {blog.content.length > 45
+                        ? `${blog.content.substring(0, 45)}...`
+                        : blog.content}
                     </Typography>
                     <Chip
                       label={blog.category_name?.name}
