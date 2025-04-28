@@ -173,6 +173,7 @@ const Home = () => {
                     justifyContent: "space-between",
                     boxShadow: 3,
                     borderRadius: 2,
+                    maxWidth: 350
                   }}
                 >
                   <CardMedia
