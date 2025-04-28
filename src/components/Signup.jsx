@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginImg from "../images/login.png";
 import { AuthContext } from "../context/AuthContext";
+import { getBaseUrl } from "../utils/common.utils";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const Signup = () => {
     if (!validate()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const response = await axios.post(`${getBaseUrl()}/api/auth/register`, formData);
 
       if (response.status === 201 || response.status === 200) {
         navigate("/login");

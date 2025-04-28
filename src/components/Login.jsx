@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginImg from "../images/login.png";
 import { AuthContext } from "../context/AuthContext";
+import { getBaseUrl } from "../utils/common.utils";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const Login = () => {
     if (!validate()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const response = await axios.post(`${getBaseUrl()}/api/auth/login`, formData);
       console.log(response)
       if (response.status === 200) {
         setUser(response.data.user);

@@ -19,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import HomeImg from '../images/home.png';
+import { getBaseUrl } from "../utils/common.utils";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Home = () => {
 
   const getAllBlogs = () => {
     axios
-      .get("http://localhost:5000/api/blog/getAll")
+      .get(`${getBaseUrl()}/api/blog/getAll`)
       .then((res) => {
         setBlogData(res?.data);
       })
@@ -40,7 +41,7 @@ const Home = () => {
   const getUserBlogs = () => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:5000/api/blog/getByUser", {
+      .get(`${getBaseUrl()}/api/blog/getByUser`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
