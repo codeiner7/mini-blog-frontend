@@ -218,6 +218,9 @@ const Home = () => {
                     <Chip
                       label={blog.category_name?.name}
                       size="small"
+                      color={blog.category_name?.name === 'Podcasts' ? 'primary' : 
+                        blog.category_name?.name === 'Product' ? 'warning' : 
+                        blog.category_name?.name === 'Software Development' ? 'success' : 'secondary'}
                       sx={{ mt: 2, alignSelf: "flex-start" }}
                     />
                   </CardContent>
