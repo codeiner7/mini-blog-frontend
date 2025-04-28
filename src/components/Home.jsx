@@ -155,9 +155,6 @@ const Home = () => {
                 ),
               }}
             />
-            <Button variant="contained" startIcon={<AddIcon />}>
-              Add
-            </Button>
           </Box>
         </Box>
 
