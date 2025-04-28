@@ -113,7 +113,6 @@ const Home = () => {
         </Box>
 
         <Box sx={{ maxWidth: 600 }}>
-          <Chip label="ADVENTURE" color="primary" sx={{ mb: 2, bgcolor: "rgba(0,0,0,0.6)" }} />
           <Typography variant="h3" fontWeight="bold" gutterBottom>
             Richird Norton photorealistic rendering as real photos
           </Typography>
